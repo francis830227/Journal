@@ -9,25 +9,36 @@
 import UIKit
 import SkyFloatingLabelTextField
 
+struct Event {
+    var title: String
+    var context: String
+    var image: UIImage
+}
+
 class CreatingViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
-
-    let tapRec = UITapGestureRecognizer()
 
     @IBOutlet weak var addImageLabel: UILabel!
     
     @IBOutlet weak var titleTextField: SkyFloatingLabelTextField!
     
+    @IBOutlet weak var contextTextView: UITextView!
+    
+    let tapRec = UITapGestureRecognizer()
+    
+    var event = [Event]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tapRec.addTarget(self, action: #selector(CreatingViewController.addImage))
+        tapRec.addTarget(self, action: #selector(addImage))
 
         imageView.addGestureRecognizer(tapRec)
 
         imageView.isUserInteractionEnabled = true
-
+        
+        
         }
 
     @IBAction func exitPressed(_ sender: Any) {
@@ -37,6 +48,10 @@ class CreatingViewController: UIViewController {
     }
 
     @IBAction func savePressed(_ sender: Any) {
+        
+        let saveManager = SaveManager()
+        
+        saveManager.saveToCoreData(titleTextField.text!, contextTextView.text, imageView.image!)
         
     }
 

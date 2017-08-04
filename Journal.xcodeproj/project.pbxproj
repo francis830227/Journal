@@ -15,6 +15,7 @@
 		154EF1CD1F3404AF00881D69 /* CreatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154EF1CC1F3404AF00881D69 /* CreatingViewController.swift */; };
 		154EF1CF1F3406B700881D69 /* CreatingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154EF1CE1F3406B700881D69 /* CreatingTableViewCell.swift */; };
 		154EF1D21F341C4300881D69 /* Event.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 154EF1D01F341C4300881D69 /* Event.xcdatamodeld */; };
+		154EF1D61F341D6600881D69 /* SaveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154EF1D51F341D6600881D69 /* SaveData.swift */; };
 		C1ACA3510C75346AF95A0101 /* Pods_Journal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B61C982C1D0EADA42392546 /* Pods_Journal.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		154EF1CC1F3404AF00881D69 /* CreatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatingViewController.swift; sourceTree = "<group>"; };
 		154EF1CE1F3406B700881D69 /* CreatingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatingTableViewCell.swift; sourceTree = "<group>"; };
 		154EF1D11F341C4300881D69 /* Event.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Event.xcdatamodel; sourceTree = "<group>"; };
+		154EF1D51F341D6600881D69 /* SaveData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveData.swift; sourceTree = "<group>"; };
 		6B61C982C1D0EADA42392546 /* Pods_Journal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Journal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B2811F2F8E7F77C01E9EB0F /* Pods-Journal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Journal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Journal/Pods-Journal.debug.xcconfig"; sourceTree = "<group>"; };
 		FFA53313D3472BDFBCAD3616 /* Pods-Journal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Journal.release.xcconfig"; path = "Pods/Target Support Files/Pods-Journal/Pods-Journal.release.xcconfig"; sourceTree = "<group>"; };
@@ -67,17 +69,34 @@
 		154EF1B81F34009D00881D69 /* Journal */ = {
 			isa = PBXGroup;
 			children = (
-				154EF1B91F34009D00881D69 /* AppDelegate.swift */,
 				154EF1D01F341C4300881D69 /* Event.xcdatamodeld */,
-				154EF1BB1F34009D00881D69 /* ViewController.swift */,
-				154EF1CC1F3404AF00881D69 /* CreatingViewController.swift */,
-				154EF1CE1F3406B700881D69 /* CreatingTableViewCell.swift */,
+				154EF1B91F34009D00881D69 /* AppDelegate.swift */,
+				154EF1D41F341D0100881D69 /* Main */,
+				154EF1D31F341CF600881D69 /* Creating */,
 				154EF1BD1F34009D00881D69 /* Main.storyboard */,
 				154EF1C01F34009D00881D69 /* Assets.xcassets */,
 				154EF1C21F34009D00881D69 /* LaunchScreen.storyboard */,
 				154EF1C51F34009D00881D69 /* Info.plist */,
 			);
 			path = Journal;
+			sourceTree = "<group>";
+		};
+		154EF1D31F341CF600881D69 /* Creating */ = {
+			isa = PBXGroup;
+			children = (
+				154EF1CE1F3406B700881D69 /* CreatingTableViewCell.swift */,
+				154EF1CC1F3404AF00881D69 /* CreatingViewController.swift */,
+				154EF1D51F341D6600881D69 /* SaveData.swift */,
+			);
+			name = Creating;
+			sourceTree = "<group>";
+		};
+		154EF1D41F341D0100881D69 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				154EF1BB1F34009D00881D69 /* ViewController.swift */,
+			);
+			name = Main;
 			sourceTree = "<group>";
 		};
 		1566E5BB42690259C0191765 /* Pods */ = {
@@ -237,6 +256,7 @@
 			files = (
 				154EF1BC1F34009D00881D69 /* ViewController.swift in Sources */,
 				154EF1D21F341C4300881D69 /* Event.xcdatamodeld in Sources */,
+				154EF1D61F341D6600881D69 /* SaveData.swift in Sources */,
 				154EF1BA1F34009D00881D69 /* AppDelegate.swift in Sources */,
 				154EF1CF1F3406B700881D69 /* CreatingTableViewCell.swift in Sources */,
 				154EF1CD1F3404AF00881D69 /* CreatingViewController.swift in Sources */,
