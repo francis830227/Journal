@@ -12,16 +12,16 @@ import CoreData
 class ViewController: UIViewController {
 
     @IBOutlet weak var eventTableView: UITableView!
-    
+
     var eachEventTitle = ""
     var eachEventImage: UIImage!
     var eachEventContext = ""
-    
+
     var events = [EventMO]()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -34,33 +34,31 @@ class ViewController: UIViewController {
             } catch {
                 print(error)
             }
-            
+
             eventTableView.reloadData()
-            
+
         }
-        
+
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+
         if segue.identifier == "toedit" {
-            
+
             let cell = sender as? CreatingTableViewCell
 
-            
             let destinationVC = segue.destination as? EditingViewController
-            
+
             for item in events where cell?.eventTitle.text == item.title {
-                
+
                 eachEventTitle = item.title!
-                
+
                 if let image = UIImage(data: item.image! as Data) {
-                    
+
                     eachEventImage = image
-                    
-                    eachEventContext = item.context!
+
                 }
-                
+
                 eachEventContext = item.context!
 
             }
@@ -69,7 +67,7 @@ class ViewController: UIViewController {
             destinationVC?.contextForSegue = eachEventContext
         }
     }
-        
+
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
@@ -83,14 +81,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "creatingCell", for: indexPath) as? CreatingTableViewCell
 
         let image = UIImage(data: events[indexPath.row].image! as Data)
-        
 
         cell?.eventTitle.text = events[indexPath.row].title
-        
+
         cell?.eventImageView.contentMode = .scaleAspectFill
         cell?.eventImageView.image = image
 
-        
         return cell!
 
     }
