@@ -20,7 +20,7 @@ class SaveManager {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     //swiftlint:enable force_cast
 
-    func saveToCoreData(_ title: String,_ context: String,_ image: UIImage) {
+    func saveToCoreData(_ title: String, _ context: String, _ image: UIImage) {
         
         if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
             
@@ -41,8 +41,8 @@ class SaveManager {
                 events = (tasks as? [EventMO])!
                 
                 print("-------現在總共有---------")
-                for number in events {
-                    print("\(number.title ?? "no name")")
+                for event in events {
+                    print("\(event.title ?? "no name")")
                     
                 }
             } catch {}
