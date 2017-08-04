@@ -9,6 +9,8 @@ pod 'SwiftLint'
 
 pod 'SkyFloatingLabelTextField', '~> 3.0'
 
+pod 'UITextView+Placeholder', '~> 1.2'
+
   # Pods for Journal
 
 end

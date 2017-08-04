@@ -22,8 +22,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        
+
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -88,6 +87,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 
         cell?.eventImageView.contentMode = .scaleAspectFill
         cell?.eventImageView.image = image
+        
 
         cell?.eventTitle.text = events[indexPath.row].title
 
@@ -99,29 +99,35 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete {
-            if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            events.remove(at: indexPath.row)
+        
+            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+            
+//            if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+//                
+//                //swiftlint:disable force_cast
+//                let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+//                //swiftlint:enable force_cast
+//                
+//                for item in events where item.title == events[indexPath.row].title {
+//                
+//                context.delete(item)
+//                
+//                appDelegate.saveContext()
+//                let request: NSFetchRequest<EventMO> = EventMO.fetchRequest()
+//                do {
+//                    events = try context.fetch(request)
+//                } catch {
+//                    print(error)
+//                }
+//                }
+               
                 
-                //swiftlint:disable force_cast
-                let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-                //swiftlint:enable force_cast
-                context.delete(events[indexPath.row])
-                
-                appDelegate.saveContext()
-                let request: NSFetchRequest<EventMO> = EventMO.fetchRequest()
-                do {
-                    events = try context.fetch(request)
-                } catch {
-                    print(error)
-                }
                 tableView.reloadData()
             }
+        
             
-            events.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
             
             }
 
         }
-    }
-
-

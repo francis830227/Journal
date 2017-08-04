@@ -9,8 +9,13 @@
 import UIKit
 import SkyFloatingLabelTextField
 import CoreData
+import UITextView_Placeholder
 
 class EditingViewController: UIViewController {
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 
     @IBOutlet weak var editTitle: SkyFloatingLabelTextField!
 
@@ -45,6 +50,10 @@ class EditingViewController: UIViewController {
         imageView.isUserInteractionEnabled = true
 
         textView.text = contextForSegue
+        
+        textView.placeholder = "Context ..."
+        textView.placeholderColor = UIColor.lightGray
+        textView.becomeFirstResponder()
 
     }
 

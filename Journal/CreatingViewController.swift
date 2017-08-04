@@ -8,6 +8,7 @@
 
 import UIKit
 import SkyFloatingLabelTextField
+import UITextView_Placeholder
 
 struct Event {
     var title: String
@@ -16,6 +17,10 @@ struct Event {
 }
 
 class CreatingViewController: UIViewController {
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 
     @IBOutlet weak var imageView: UIImageView!
 
@@ -25,6 +30,8 @@ class CreatingViewController: UIViewController {
 
     @IBOutlet weak var contextTextView: UITextView!
 
+    @IBOutlet weak var saveButtonOutlet: UIButton!
+    
     let tapRec = UITapGestureRecognizer()
 
     var event = [Event]()
@@ -38,10 +45,16 @@ class CreatingViewController: UIViewController {
 
         imageView.isUserInteractionEnabled = true
 
-        contextTextView.text = "Context ..."
-        contextTextView.textColor = UIColor.lightGray
+        contextTextView.placeholder = "Context ..."
+        contextTextView.placeholderColor = UIColor.lightGray
         contextTextView.becomeFirstResponder()
 
+        saveButtonOutlet.layer.cornerRadius = 22
+        saveButtonOutlet.layer.shadowOpacity = 1
+        saveButtonOutlet.layer.shadowColor = UIColor(red: 247/255.0, green: 174/255.0, blue: 163/255.0, alpha: 1).cgColor
+        saveButtonOutlet.layer.shadowRadius = 10
+        saveButtonOutlet.layer.shadowOffset = CGSize(width: 0, height: 5)
+        
         }
 
     @IBAction func exitPressed(_ sender: Any) {
@@ -62,26 +75,26 @@ class CreatingViewController: UIViewController {
 
 }
 
-extension CreatingViewController: UITextViewDelegate {
-
-    func textViewDidBeginEditing(_ textView: UITextView) {
-
-        if textView.textColor == UIColor.lightGray {
-
-            textView.text = nil
-
-            textView.textColor = UIColor(red: 131/255.0, green: 156/255.0, blue: 152/255.0, alpha: 1)
-        }
-    }
-
-    func textViewDidEndEditing(_ textView: UITextView) {
-        if textView.text.isEmpty {
-            textView.text = "Context ..."
-            textView.textColor = UIColor.lightGray
-        }
-    }
-
-}
+//extension CreatingViewController: UITextViewDelegate {
+//
+//    func textViewDidBeginEditing(_ textView: UITextView) {
+//
+//        if textView.textColor == UIColor.lightGray {
+//
+//            textView.text = nil
+//
+//            textView.textColor = UIColor(red: 131/255.0, green: 156/255.0, blue: 152/255.0, alpha: 1)
+//        }
+//    }
+//
+//    func textViewDidEndEditing(_ textView: UITextView) {
+//        if textView.text.isEmpty {
+//            textView.text = "Context ..."
+//            textView.textColor = UIColor.lightGray
+//        }
+//    }
+//
+//}
 
 extension CreatingViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
