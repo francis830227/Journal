@@ -22,7 +22,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -74,7 +73,7 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+
         return events.count
     }
 
@@ -84,25 +83,22 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 
         let image = UIImage(data: events[indexPath.row].image! as Data)
 
-
         cell?.eventImageView.contentMode = .scaleAspectFill
         cell?.eventImageView.image = image
-        
 
         cell?.eventTitle.text = events[indexPath.row].title
 
-        
         return cell!
 
     }
-    
+
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        
+
         if editingStyle == .delete {
             events.remove(at: indexPath.row)
-        
+
             tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
-            
+
 //            if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
 //                
 //                //swiftlint:disable force_cast
@@ -121,13 +117,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 //                    print(error)
 //                }
 //                }
-               
-                
+
                 tableView.reloadData()
             }
-        
-            
-            
+
             }
 
         }

@@ -17,7 +17,7 @@ struct Event {
 }
 
 class CreatingViewController: UIViewController {
-    
+
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -30,7 +30,6 @@ class CreatingViewController: UIViewController {
 
     @IBOutlet weak var contextTextView: UITextView!
 
-    
     let tapRec = UITapGestureRecognizer()
 
     var event = [Event]()

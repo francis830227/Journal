@@ -12,7 +12,7 @@ import CoreData
 import UITextView_Placeholder
 
 class EditingViewController: UIViewController {
-    
+
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -30,7 +30,7 @@ class EditingViewController: UIViewController {
     var contextForSegue = ""
 
     var events = [EventMO]()
-    
+
     var titleOld = ""
 
     override func viewDidLoad() {
@@ -50,7 +50,7 @@ class EditingViewController: UIViewController {
         imageView.isUserInteractionEnabled = true
 
         textView.text = contextForSegue
-        
+
         textView.placeholder = "Context ..."
         textView.placeholderColor = UIColor.lightGray
         textView.becomeFirstResponder()
@@ -67,12 +67,11 @@ class EditingViewController: UIViewController {
             } catch {
                 print(error)
             }
-            
+
         }
-        
+
     }
 
-    
     @IBAction func exitPressed(_ sender: Any) {
 
         dismiss(animated: true, completion: nil)
@@ -82,26 +81,26 @@ class EditingViewController: UIViewController {
     @IBAction func updatePressed(_ sender: Any) {
 
         if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
-        
+
         for item in events where item.title == titleOld {
-            
+
             item.title = editTitle.text
-            
+
             item.context = textView.text
-            
+
             let eventImage = UIImageJPEGRepresentation(imageView.image!, 1)
             item.image = eventImage! as NSData
         }
-        
+
             appDelegate.saveContext()
-        
+
         }
         print("-------現在總共有---------")
         for event in events {
             print("\(event.title ?? "no name")")
-            
+
         }
-        
+
         dismiss(animated: true, completion: nil)
     }
 
