@@ -30,7 +30,6 @@ class CreatingViewController: UIViewController {
 
     @IBOutlet weak var contextTextView: UITextView!
 
-    @IBOutlet weak var saveButtonOutlet: UIButton!
     
     let tapRec = UITapGestureRecognizer()
 
@@ -49,13 +48,7 @@ class CreatingViewController: UIViewController {
         contextTextView.placeholderColor = UIColor.lightGray
         contextTextView.becomeFirstResponder()
 
-        saveButtonOutlet.layer.cornerRadius = 22
-        saveButtonOutlet.layer.shadowOpacity = 1
-        saveButtonOutlet.layer.shadowColor = UIColor(red: 247/255.0, green: 174/255.0, blue: 163/255.0, alpha: 1).cgColor
-        saveButtonOutlet.layer.shadowRadius = 10
-        saveButtonOutlet.layer.shadowOffset = CGSize(width: 0, height: 5)
-        
-        }
+                }
 
     @IBAction func exitPressed(_ sender: Any) {
 
