@@ -1,0 +1,15 @@
+PODS:
+  - SkyFloatingLabelTextField (3.1.0)
+  - SwiftLint (0.20.0)
+
+DEPENDENCIES:
+  - SkyFloatingLabelTextField (~> 3.0)
+  - SwiftLint
+
+SPEC CHECKSUMS:
+  SkyFloatingLabelTextField: 26a92ad407044dd5a7c3e4e348738ff0991514fe
+  SwiftLint: 3f7543509c931d1291395335f34e245d3919b7f2
+
+PODFILE CHECKSUM: 05e1702355aa1aff0834468d8c46cae0ac9b3f26
+
+COCOAPODS: 1.2.1
