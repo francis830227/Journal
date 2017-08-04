@@ -71,6 +71,9 @@ class EditingViewController: UIViewController {
     }
 
     @IBAction func updatePressed(_ sender: Any) {
+
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+        
         for item in events where item.title == titleOld {
             
             item.title = editTitle.text
@@ -79,6 +82,15 @@ class EditingViewController: UIViewController {
             
             let eventImage = UIImageJPEGRepresentation(imageView.image!, 1)
             item.image = eventImage! as NSData
+        }
+        
+            appDelegate.saveContext()
+        
+        }
+        print("-------現在總共有---------")
+        for event in events {
+            print("\(event.title ?? "no name")")
+            
         }
         
         dismiss(animated: true, completion: nil)

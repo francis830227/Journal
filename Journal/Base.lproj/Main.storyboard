@@ -77,22 +77,24 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="212"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lh5-S3-sUq">
-                                                    <rect key="frame" x="28" y="18" width="319" height="142.5"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lh5-S3-sUq">
+                                                    <rect key="frame" x="28" y="18" width="319" height="140"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="140" id="Li0-Ma-a58"/>
+                                                    </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cmx-EO-obe">
-                                                    <rect key="frame" x="38" y="176.5" width="299" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <rect key="frame" x="38" y="185.5" width="329" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.26414936779999998" green="0.34076312180000001" blue="0.3784654737" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="cmx-EO-obe" secondAttribute="trailing" constant="30" id="02h-pV-ljm"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="cmx-EO-obe" secondAttribute="trailing" id="02h-pV-ljm"/>
                                                 <constraint firstItem="Lh5-S3-sUq" firstAttribute="leading" secondItem="tha-RX-Zf2" secondAttribute="leadingMargin" constant="20" id="4y6-Pq-Jlr"/>
                                                 <constraint firstItem="cmx-EO-obe" firstAttribute="leading" secondItem="tha-RX-Zf2" secondAttribute="leadingMargin" constant="30" id="6FI-EX-ppg"/>
-                                                <constraint firstItem="cmx-EO-obe" firstAttribute="top" secondItem="Lh5-S3-sUq" secondAttribute="bottom" constant="16" id="L4B-FP-doz"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="cmx-EO-obe" secondAttribute="bottom" constant="10" id="pyn-xu-NSQ"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="cmx-EO-obe" secondAttribute="bottom" id="XMs-Oo-JNG"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Lh5-S3-sUq" secondAttribute="trailing" constant="20" id="sf6-nK-0yP"/>
                                                 <constraint firstItem="Lh5-S3-sUq" firstAttribute="top" secondItem="tha-RX-Zf2" secondAttribute="topMargin" constant="10" id="uHK-ep-v0U"/>
                                             </constraints>
